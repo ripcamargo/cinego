@@ -1,0 +1,89 @@
+@use './variables' as *;
+
+body {
+  background-color: $bg-dark;
+  color: $text-primary;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #1a1a2e, #16213e) !important;
+  border-bottom: 1px solid $border-color;
+}
+
+.footer {
+  background-color: $bg-surface;
+  border-top: 1px solid $border-color;
+  color: $text-muted;
+
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+  text-align: center;
+}
+
+.card {
+  background-color: $bg-surface;
+  border: 1px solid $border-color;
+  color: $text-primary;
+
+  &:hover {
+    border-color: $purple;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+  }
+}
+
+.card-title {
+  color: $text-primary;
+}
+
+.card-text {
+  color: $text-muted;
+}
+
+.btn-favorite {
+  background: linear-gradient(90deg, $purple, $blue);
+  border: none;
+  color: white;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.9;
+    color: white;
+  }
+
+  .btn-favorite {
+  background: linear-gradient(90deg, $purple, $blue);
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: 0.25s;
+
+  &:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    color: white;
+  }
+
+}
+}
+
+.form-control {
+  background-color: $bg-surface;
+  border: 1px solid $border-color;
+  color: $text-primary;
+
+  &:focus {
+    background-color: $bg-surface;
+    border-color: $purple;
+    color: $text-primary;
+    box-shadow: 0 0 0 0.25rem rgba(154, 107, 247, 0.25);
+  }
+}
