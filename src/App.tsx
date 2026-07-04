@@ -5,6 +5,7 @@ import Favorites from './pages/Favorites'
 import { FavoritesProvider } from './contexts/FavoritesContext'
 import Navbar from './components/Navbar'
 import Footer from './components/footer'
+import ScrollToTop from './components/ScrolltoTop'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <>
       <FavoritesProvider>
         <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <div style={{ paddingTop: '70px' }}>
           <Routes>

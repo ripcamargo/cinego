@@ -22,6 +22,22 @@ body {
   }
 }
 
+.btn-outline-custom {
+  background: #1a1a2e;
+  border: 1px solid $border-color;
+  color: $text-primary;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.25s;
+
+  &:hover {
+    border-color: $purple;
+    color: $purple;
+    background: rgba(154, 107, 247, 0.08);
+  }
+}
+
 .footer {
   background-color: $bg-surface;
   border-top: 1px solid $border-color;
@@ -47,6 +63,33 @@ body {
     transform: translateY(-4px);
     transition: all 0.2s ease;
   }
+}
+
+.movie-detail-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.movie-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  opacity: 0.4;
+  z-index: -1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(14, 14, 16, 0.3), $bg-dark 95%);
+  }
+
 }
 
 .card-title {

@@ -37,39 +37,48 @@ function MovieDetail() {
     }, [id])
 
     return (
-        <div className="container">
-            <button className="btn-favorite mb-3" onClick={handleVoltar}>
-                Voltar
-            </button>
-
+        <div className="movie-detail-page">
             {movie && (
-                <div className="row">
-                    <div className="col-md-4">
-                        <img
-                            src={posterUrl}
-                            alt={movie.title}
-                            className="img-fluid rounded"
-                        />
-                    </div>
-
-                    <div className="col-md-8">
-                        <h1>{movie.title}</h1>
-                        <p>{movie.genres.map((genero) => genero.name).join(', ')}</p>
-                        <span className="rating-badge mb-3">⭐ {movie.vote_average.toFixed(1)}</span>
-                        <p className="movie-overview">{movie.overview}</p>
-
-                        {isFavorite(movie.id) ? (
-                            <button className="btn-favorite" onClick={() => removeFavorite(movie.id)}>
-                                Remover dos favoritos
-                            </button>
-                        ) : (
-                            <button className="btn-favorite" onClick={() => addFavorite(movie)}>
-                                Adicionar aos favoritos
-                            </button>
-                        )}
-                    </div>
-                </div>
+                <div
+                    className="movie-backdrop"
+                    style={{ backgroundImage: `url(${posterUrl})` }}
+                />
             )}
+
+            <div className="container position-relative">
+                <button className="btn-outline-custom mb-3" onClick={handleVoltar}>
+                    Voltar
+                </button>
+
+                {movie && (
+                    <div className="row">
+                        <div className="col-md-4">
+                            <img
+                                src={posterUrl}
+                                alt={movie.title}
+                                className="img-fluid rounded"
+                            />
+                        </div>
+
+                        <div className="col-md-8">
+                            <h1>{movie.title}</h1>
+                            <p>{movie.genres.map((genero) => genero.name).join(', ')}</p>
+                            <span className="rating-badge mb-3">⭐ {movie.vote_average.toFixed(1)}</span>
+                            <p className="movie-overview">{movie.overview}</p>
+
+                            {isFavorite(movie.id) ? (
+                                <button className="btn-outline-custom mb-3" onClick={() => removeFavorite(movie.id)}>
+                                    Remover dos favoritos
+                                </button>
+                            ) : (
+                                <button className="btn-outline-custom mb-3" onClick={() => addFavorite(movie)}>
+                                    Adicionar aos favoritos
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
