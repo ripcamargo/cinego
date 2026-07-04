@@ -111,3 +111,8 @@ Filmes com títulos de tamanhos muito diferentes faziam os cards da listagem fic
 - [x] Listagem de favoritos com mensagem para lista vazia
 - [x] Persistência de favoritos em `localStorage`
 - [x] Navbar fixa e responsiva para navegação entre telas
+
+## Melhorias futuras
+- O campo de busca atualmente faz a requisição à API a cada letra digitada para realizar a busca dos filmes. Como sugestão, poderá começar a buscar somente a partir da terceira letra e aguardar uma pausa de 2 segundos após o usuário parar de digitar.
+
+- Criar um simples componente de loading ou tela de carregamento antes de carregar todos os cartazes, pois há um pequeno gargalo na primeira consulta dos filmes.
