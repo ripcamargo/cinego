@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import type { MovieDetail as MovieDetailType } from '../types/Movie'
 import { getMovieById } from '../services/tmdb'
 import { useFavorites } from '../contexts/FavoritesContext'
+import noPosterImage from '../assets/no-poster.png'
 
 function MovieDetail() {
     const { id } = useParams()
@@ -10,6 +11,9 @@ function MovieDetail() {
 
     const navigate = useNavigate()
     const { addFavorite, removeFavorite, isFavorite } = useFavorites()
+    const posterUrl = movie?.poster_path
+        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+        : noPosterImage
 
     function handleVoltar() {
         navigate(-1)
@@ -42,7 +46,7 @@ function MovieDetail() {
                 <div className="row">
                     <div className="col-md-4">
                         <img
-                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                            src={posterUrl}
                             alt={movie.title}
                             className="img-fluid rounded"
                         />
@@ -51,8 +55,8 @@ function MovieDetail() {
                     <div className="col-md-8">
                         <h1>{movie.title}</h1>
                         <p>{movie.genres.map((genero) => genero.name).join(', ')}</p>
-                        <p>{movie.vote_average}</p>
-                        <p>{movie.overview}</p>
+                        <span className="rating-badge mb-3">⭐ {movie.vote_average.toFixed(1)}</span>
+                        <p className="movie-overview">{movie.overview}</p>
 
                         {isFavorite(movie.id) ? (
                             <button className="btn-favorite" onClick={() => removeFavorite(movie.id)}>

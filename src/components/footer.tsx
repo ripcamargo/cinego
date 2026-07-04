@@ -1,10 +1,10 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>
-        © {new Date().getFullYear()} CineGo - Filmes e Séries na palma da sua mão - Todos os direitos reservados.
-      </p>
-    </footer>
+  <div className="container">
+    <p>© 2026 CineGo. Todos os direitos reservados.</p>
+  </div>
+</footer>
   );
 }
 

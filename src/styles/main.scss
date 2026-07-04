@@ -3,12 +3,23 @@
 body {
   background-color: $bg-dark;
   color: $text-primary;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
 }
 
 .navbar {
   background: linear-gradient(90deg, #1a1a2e, #16213e) !important;
   border-bottom: 1px solid $border-color;
+
+}
+
+.text-btn-menu {
+    color: $text-primary;
+
+    &:hover {
+    border-color: $purple;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+  }
 }
 
 .footer {
@@ -40,10 +51,44 @@ body {
 
 .card-title {
   color: $text-primary;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 48px;
 }
 
 .card-text {
   color: $text-muted;
+}
+
+.menu-navbar {
+  margin-left: auto; // padrão: empurra pra direita (celular)
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0; // cancela o empurrão pra direita
+  }
+}
+
+.movie-overview {
+  text-align: justify;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(154, 107, 247, 0.15);
+  color: $text-primary;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .btn-favorite {
@@ -79,6 +124,10 @@ body {
   background-color: $bg-surface;
   border: 1px solid $border-color;
   color: $text-primary;
+
+   &::placeholder {
+    color: $text-muted;
+  }
 
   &:focus {
     background-color: $bg-surface;

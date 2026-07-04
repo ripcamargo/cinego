@@ -30,7 +30,6 @@ function Home() {
 
     return (
         <div className="container mt-4">
-
             <input
                 type="text"
                 value={query}
@@ -38,9 +37,11 @@ function Home() {
                 placeholder="Buscar filme..."
                 className="form-control mb-4"
             />
+
+
             <div className="row">
                 {movies.map((movie) => (
-                    <div className="col-md-3" key={movie.id}>
+                    <div className="col-md-3 d-flex mb-4" key={movie.id}>
                         <MovieCard movie={movie} />
                     </div>
                 ))}

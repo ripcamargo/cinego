@@ -12,7 +12,7 @@ function Favorites() {
       ) : (
         <div className="row">
           {favorites.map((movie) => (
-            <div className="col-md-3" key={movie.id}>
+            <div className="col-md-3 d-flex mb-4" key={movie.id}>
               <MovieCard movie={movie} />
             </div>
           ))}
